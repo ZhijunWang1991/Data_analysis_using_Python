@@ -77,10 +77,42 @@ cars = pd.read_csv('cars.csv')
 # Print out cars
 print(cars)
 
+# Import pandas as pd
+import pandas as pd
+
+# Fix import by including index_col
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Print out cars
+print(cars)
 
 
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Print out country column as Pandas Series
+print(cars['country'])
+
+# Print out country column as Pandas DataFrame
+print(cars[['country']])
+
+# Print out DataFrame with country and drives_right columns
+print(cars[['country', 'drives_right']])
 
 
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Print out drives_right column as Series
+print(cars.loc[:, 'drives_right'])
+
+# Print out drives_right column as DataFrame
+print(cars.loc[:, ['drives_right']])
+
+# Print out cars_per_cap and drives_right as DataFrame
+print(cars.loc[:, ['cars_per_cap','drives_right']])
 
 
 
