@@ -115,10 +115,51 @@ print(cars.loc[:, ['drives_right']])
 print(cars.loc[:, ['cars_per_cap','drives_right']])
 
 
+# Define variables
+room = "bed"
+area = 14.0
 
+# if-elif-else construct for room
+if room == "kit" :
+    print("looking around in the kitchen.")
+elif room == "bed":
+    print("looking around in the bedroom.")
+else :
+    print("looking around elsewhere.")
 
+# if-elif-else construct for area
+if area > 15 :
+    print("big place!")
+elif area > 10 :
+    print("medium size, nice!")
+else :
+    print("pretty small.")
 
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
 
+# Create car_maniac: observations that have a cars_per_cap over 500
+cpc = cars['cars_per_cap']
+many_cars = cpc > 500
+car_maniac = cars[many_cars]
 
+# Print car_maniac
+print(car_maniac)
+
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Import numpy, you'll need this
+import numpy as np
+
+# Create medium: observations with cars_per_cap between 100 and 500
+cpc = cars['cars_per_cap']
+between = np.logical_and(cpc > 100, cpc < 500)
+medium = cars[between]
+
+# Print medium
+print(medium)
 
 
